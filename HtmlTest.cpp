@@ -45,24 +45,24 @@ int main()
 		size_t found = temp.find("*T");  // Searching in temp string for '*T'
 		if (found!=string::npos)		 // If the size_t doesn't point to a null position
 		{
-			temp.replace(0, 2, "\n<title>");  // Replaces *T with <title>
-		}
+			temp.replace(0, 2, "\n<title>");  // Replaces *T with <title>...the 0 indicates the character position
+		}					  // the following 2 indicates the number of characters to replace, i.e "*T"
 
 		size_t findnew = temp.find("*C"); // Searching in temp string for '*C'
 		if (found!=string::npos)		  // If the size_t doesn't point to a null position
 		{
-			temp.replace(21, 2, "<comment>"); // Replaces *C with <comment>
-		}
+			temp.replace(21, 2, "<comment>"); // Replaces *C with <comment>...the 21 indicates the character position
+		}					  // the following 2 indicates the number of characters to replace, i.e "*C"
 
 		size_t findagain = temp.find("*H");  // Searching in temp string for '*T'
 		if (findagain != string::npos)       // If the size_t doesn't point to a null position
 		{
-			temp.replace(90, 2, "<Header>");  // Replaces *H with <Header>
-		}
+			temp.replace(90, 2, "<Header>");  // Replaces *H with <Header>...the 90 indicates the character position
+		}					  // the following 2 indicates the number of characters to replace, i.e "*H"
 		
 		cout << endl << temp;				  // Display the change 'temp' string
 	}
-	file1.close();							  // Close the input text file
+	file1.close();						  // Close the input text file
 	fout << temp << endl;					  // Stream the 'temp' string into the html output file
 	cout << "\n\nThe new file has been saved within resulthtml.html!\n";
 	//file1.close();
