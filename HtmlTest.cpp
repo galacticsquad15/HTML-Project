@@ -4,15 +4,21 @@
 using namespace std;
 
 /* The program, so far, will read in the text, change the desired characters
-and insert the corresponding string... 
+and insert the corresponding string...
 I will continue working on it - Gabriel Woodburn...February 21st*/
 
 int main()
 {
 	string temp;
-	string a = "</title>"; 
-	string b = " </comment>"; 
-	string c = " </header>";
+	string t = "*T";
+	string tBegin = "<title>";
+	string tEnd = "</title>";
+	string c = "*C";
+	string cBegin = "<comment>";
+	string cEnd = " </comment>";
+	string h = "*H";
+	string hBegin = "<header>";
+	string hEnd = "</header>";
 	ifstream file1;
 	ofstream fout;
 
@@ -34,39 +40,38 @@ int main()
 
 	fstream input("testhtml.txt", ios::in);  // Get input from test file
 	if (file1) {
-		file1.seekg(0, ios::end);  // Seek until the end of the file
+		file1.seekg(0, ios::end);  	 // Seek until the end of the file
 		size_t len = file1.tellg();
 		file1.seekg(0);
 		string temp(len + 1, '\0');
-		file1.read(&temp[0], len); // Reads the data into 'temp' string
-		file1.close();		   // Close the input text file
-		cout << temp << endl;	   // Used for testing purposes...shows temp info
+		file1.read(&temp[0], len);       // Reads the data into 'temp' string
+		file1.close();		         // Close the input text file
+		cout << temp << endl;	  	 // Used for testing purposes...shows temp info
+		size_t findT = temp.find(t);     // Searching in temp string for '*T'
+		if (findT != string::npos)       // If the size_t doesn't point to a null position
+		{
+			temp.replace(temp.find(t), t.length(), tBegin);	// Replaces *T with <title>...parameters are the find(t) function, the length of string t, and the replacement string 'tBegin'
+			temp.insert(19, tEnd);				// Insert string 'tEnd' at character position 19 within the temp string
+		}
 
-		size_t found = temp.find("*T");  // Searching in temp string for '*T'
-		if (found!=string::npos)         // If the size_t doesn't point to a null position
+		size_t findC = temp.find(c);	  // Searching in temp string for '*C'
+		if (findC != string::npos)	  // If the size_t doesn't point to a null position
 		{
-			temp.replace(0, 3, "<title>");  // Replaces *T with <title>...the 0 indicates the character position, the following 2 indicates the number of characters to replace, i.e "*T"
-			temp.insert(17, a);		// Insert string 'a' at character position 131 within the temp string
+			temp.replace(temp.find(c), c.length(), cBegin); // Replaces *C with <comment>...parameters are the find(c) function, the length of string c, and the replacement string 'cBegin'
+			temp.insert(96, cEnd);	  			// Insert string 'cEnd' at character position 96 within the temp string
 		}
-		
-		size_t findnew = temp.find("*C"); // Searching in temp string for '*C'
-		if (found!=string::npos)	  // If the size_t doesn't point to a null position
+
+		size_t findH = temp.find(h);	 // Searching in temp string for '*H'
+		if (findH != string::npos)       // If the size_t doesn't point to a null position
 		{
-			temp.replace(27, 2, "<comment>"); // Replaces *C with <comment>...the 27 indicates the character position, the following 2 indicates the number of characters to replace, i.e "*C"
-			temp.insert(95, b);	  	  // Insert string 'b' at character position 95 within the temp string
+			temp.replace(temp.find(h), h.length(), hBegin); // Replaces *H with <header>...parameters are the find(h) function, the length of string h, and the replacement string 'hBegin'
+			temp.insert(133, hEnd);				// Insert string 'hEnd' at character position 133 within the temp string
 		}
-		
-		size_t findagain = temp.find("*H");  // Searching in temp string for '*H'
-		if (findagain != string::npos)       // If the size_t doesn't point to a null position
-		{
-			temp.replace(107, 2, "<header>");  // Replaces *H with <Header>...the 107 indicates the character position, the following 2 indicates the number of characters to replace, i.e "*H"
-			temp.insert(131, c);		   // Insert string 'c' at character position 131 within the temp string
-		}
-		
+
 		cout << endl << temp;			   // Display the change 'temp' string
 		fout << temp << endl;			   // Stream the 'temp' string into the html output file
 	}
-	
+
 	cout << "\n\nThe new file has been saved within resulthtml.html!\n";
 	fout.close();					   // Close the output html file
 
