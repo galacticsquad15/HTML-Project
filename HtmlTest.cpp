@@ -51,21 +51,21 @@ int main()
 		if (findT != string::npos)       // If the size_t doesn't point to a null position
 		{
 			temp.replace(temp.find(t), t.length(), tBegin);	// Replaces *T with <title>...parameters are the find(t) function, the length of string t, and the replacement string 'tBegin'
-			temp.insert(19, tEnd);				// Insert string 'tEnd' at character position 19 within the temp string
+			temp.insert(temp.find(c) - 1, tEnd);		// Insert string 'tEnd' one character position before <comment> within the temp string
 		}
 
 		size_t findC = temp.find(c);	  // Searching in temp string for '*C'
 		if (findC != string::npos)	  // If the size_t doesn't point to a null position
 		{
 			temp.replace(temp.find(c), c.length(), cBegin); // Replaces *C with <comment>...parameters are the find(c) function, the length of string c, and the replacement string 'cBegin'
-			temp.insert(96, cEnd);	  			// Insert string 'cEnd' at character position 96 within the temp string
+			temp.insert(temp.find(h) - 1, cEnd);		// Insert string 'cEnd' one character position before <header> within the temp string
 		}
 
 		size_t findH = temp.find(h);	 // Searching in temp string for '*H'
 		if (findH != string::npos)       // If the size_t doesn't point to a null position
 		{
 			temp.replace(temp.find(h), h.length(), hBegin); // Replaces *H with <header>...parameters are the find(h) function, the length of string h, and the replacement string 'hBegin'
-			temp.insert(133, hEnd);				// Insert string 'hEnd' at character position 133 within the temp string
+			temp.insert(temp.find("Example") + 8, hEnd);	// Insert string hEnd 8 characters after the word 'Example' within the header shorthand
 		}
 
 		cout << endl << temp;			   // Display the change 'temp' string
