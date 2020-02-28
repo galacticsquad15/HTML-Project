@@ -1,3 +1,9 @@
 *T Title Here 
 *C Gabriel Woodburn, gwoodburn@dmacc.edu, February 19th, 2020
 *H Just An Example
+*H1 headerone
+*H2 headertwo
+*H3 headerthree
+*H4 headerfour
+*H5 headerfive
+*H6 headersix
