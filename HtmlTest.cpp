@@ -90,7 +90,7 @@ int main()
 		if (findHH != string::npos)
 		{
 			temp.replace(temp.find(h), h.length(), hBegin);
-			temp.insert(temp.find("Header") + 6, hEnd);
+			temp.insert(temp.find("Another Example") + 15, hEnd);
 		}
 
 		size_t findH1 = temp.find(h1);	 // Searching in temp string for '*H1'
