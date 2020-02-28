@@ -1,7 +1,7 @@
 *T Title Here 
 *C Gabriel Woodburn, gwoodburn@dmacc.edu, February 19th, 2020
 *H Just An Example
-*H Another Header
+*H Another Example
 *H1 headerone
 *H2 headertwo
 *H3 headerthree
