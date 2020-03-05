@@ -1,10 +1,18 @@
-*T Title Here 
-*C Gabriel Woodburn, gwoodburn@dmacc.edu, February 19th, 2020
-*H Just An Example
-*H Another Example
-*H1 headerone
-*H2 headertwo
-*H3 headerthree
-*H4 headerfour
-*H5 headerfive
-*H6 headersix
+*T HTML PROJECT
+*C Page Designers: Gabriel Woodburn, Elijah Morishita, Bradley Owens, Robert Knar, Ian Waddell, Lyle Reicks, Jian Shi, Skyler Brown
+*H Welcome!
+*H *BCHECK OUT OUR LINKS AND JOIN THE FUN!
+*IM Eftkilla.jpg
+*H1 Play Games with Friends
+*H2 Play them by yourself
+*H3 Play games whenever
+*H4 Play games however
+*H5 Just GAME
+*H6 Don't miss out
+*O PC Playstation Xbox
+*P  Whatever your platform...
+*I  Gamer's for LIFE!
+*R
+*A  href="https://www.escapefromtarkov.com/"> Video Game Club
+*R
+*L  href="extrahtml.html"> Click Here for Additional Information
